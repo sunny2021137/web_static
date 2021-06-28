@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+section {
+    position: relative;
+    height: 100vh;
+    background-image: url("../images/color.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section .container {
+    position: relative;
+    top: 40px;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+section .container .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+/* 圖片盒 */
+section .container .user .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: .5s;
+}
+
+section .container .user .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+section .container .user .imgBx h1 {
+    color: #555;
+    font-size: 30px;
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+section .container .user .imgBx p {
+    color: #555;
+    width: 60%;
+    height: 80%;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    z-index: 1;
+}
+
+
+/* 游標 */
+section .container .user .imgBx .typeText::after{
+    content: '';
+    position: absolute;
+    height: 1em;
+    width: 1.5px;
+    margin-left: 1%;
+    margin-top: 0.7%;
+    background-color: #8e9aaf;
+    animation: san 0.5s steps(1) infinite;
+  }
+  /* 閃爍特效 */
+  @keyframes san{
+    0%,100%{
+        background-color: #8e9aaf;;
+    }
+    50%{
+       background-color: transparent;
+    }
+  
+  }
+  
+/* 表單盒 */
+section .container .user .formBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: .5s;
+}
+section .container .user form {
+    width: 100%;
+    height: 100%;
+}
+section .container .user .formBx div {
+    width: 100%;
+}
+section .container .user .formBx form h2{
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+section .container .user .formBx form input{
+    position: relative;
+    width: 100%;
+    padding: 7px;
+    background: #f5f5f5;
+    color: #333;
+    font-family: 'JasonHandwriting3','Noto Sans TC', sans-serif;
+    border: none;
+    outline:none;
+    box-shadow:none;
+    margin: 8px 0;
+    font-size: 20px;
+    letter-spacing:1px;
+    font-weight: 300;
+}
+/* 按鈕 */
+section .container .user .formBx form input[type="submit"]{
+    max-width: 100px;
+    color:#fff;
+    cursor:pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: .5s;
+}
+section .container .signinBx .formBx form input[type="submit"] {
+    background: #ffd3d3;
+}
+.error {
+    color: #ff8484;
+}
+section .container .signupBx .formBx form input[type="submit"] {
+    background: rgb(172, 255, 164);
+
+}
+
+/* 註冊 */
+section .container .user .formBx form .signup{
+    position: relative;
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #555;
+    font-weight: 300;
+}
+section .container .signinBx .formBx form .signup a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffd3d3;
+}
+section .container .signupBx .formBx form .signup a{
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(172, 255, 164);
+}
+/* 隱藏時不可有滑鼠事件 */
+section .container .signupBx {
+    pointer-events: none;
+}
+
+section .container.active .signupBx {
+    pointer-events: initial;
+}
+
+/* 隱藏在右側 */
+section .container .signupBx .formBx {
+    left: 100%;
+}
+/* 到左盒位置 */
+section .container.active .signupBx .formBx {
+    left: 0;
+}
+/* 隱藏在左側 */
+section .container .signupBx .imgBx {
+    left: -100%;
+}
+/* 到右盒位置 */
+section .container.active .signupBx .imgBx {
+    left: 0;
+}
+
+
+section .container .signinBx .formBx {
+    left: 0;
+}
+
+section .container.active .signinBx .formBx {
+    left: 100%;
+}
+
+section .container .signinBx .imgBx {
+    left: 0;
+}
+
+section .container.active .signinBx .imgBx {
+    left: 100%;
+}
+
+@media (max-width: 850px) {
+    section {
+        min-height: 100vh;
+        height: auto;
+    }
+    section .container {
+        max-width: 400px;
+    }
+
+    section .container .imgBx {
+        display: none;
+    }
+
+    section .container .user .formBx {
+        width: 100%;
+    }
+}
+  /* 還不需用到搜尋 */
+  nav form {
+    visibility: hidden;
+  }
+  .search-icon {
+    visibility: hidden;
+  }

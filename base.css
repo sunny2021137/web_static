@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*css3盒模型*/
+    box-sizing: border-box;
+}
+em, i {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    /*解決空白縫隙+居中*/
+    vertical-align: middle;
+}
+
+button {
+    /*鼠標經過button變手指*/
+    cursor: pointer;
+}
+button, input {
+    /*去掉默認邊框*/
+    border: 0;
+    /*去掉按搜索框後顯示的邊框*/
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    /*CSS抗文字鋸齒*/
+    -webkit-font-smoothing: antialiased;
+    font: 12px/1.5 Microsoft YaHei; /*字體大小/行高(相對字體大小)，字型*/
+} 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/*清除浮動*/
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+   }
+   /*IE6，7*/
+   .clearfix { 
+    *zoom: 1;
+   }
+ 
