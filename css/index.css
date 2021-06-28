@@ -1,0 +1,448 @@
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+#wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 70px;
+}
+
+#wrap .img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .img img {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.7s ease 0s;
+}
+
+#wrap .img img.show {
+  opacity: 1;
+}
+
+#wrap a {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: block;
+  width: 40px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: red;
+  user-select: none;
+  font-size: 30px;
+  text-align: center;
+  line-height: 70px;
+  text-decoration: none;
+}
+
+#wrap a.left {
+  left: 0;
+  border-radius: 0 50% 50% 0;
+}
+
+#wrap a.right {
+  right: 0;
+  border-radius: 50% 0 0 50%;
+}
+.new {
+  width: 100%;
+  position: relative;
+  padding-top: 70px;
+}
+.new h1, .all h1 {
+  text-align: center;
+  color: #333;
+  padding: 2%;
+}
+
+.baiyei {
+  width: 100%;
+  /* max-width: 1200px; */
+  height: 350px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.baiyei ul {
+  width: 100%;
+  /* 等高置中 */
+  display: table;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.baiyei ul li {
+  display: table-cell;
+  vertical-align: bottom;
+  position: relative;
+  /* s1/6 */
+  width: 16.666%;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 500ms ease;
+}
+
+.baiyei li div {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* 遮罩 */
+.baiyei ul li div a {
+  display: block;
+  height: 350px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+
+.baiyei ul li div a * {
+  opacity: 0;
+  margin: 0;
+  width: 100%;
+  /* 超出用... */
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: 5;
+  /* 不換行 */
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.baiyei ul li div a h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  top: 230px;
+}
+
+.baiyei ul li div a p {
+  top: 230px;
+  font-size: 13.5px;
+}
+
+.baiyei ul li:nth-child(1) {
+  background-image: url("../images/PUNTUTU.png");
+  background-size: cover;
+}
+
+.baiyei ul li:nth-child(2) {
+  background-image: url("../images/LONGLONG.png");
+  background-size: cover;
+}
+.baiyei ul li:nth-child(3) {
+  background-image: url("../images/BEIBEI.png");
+  background-size: cover;
+}
+
+.baiyei ul li:nth-child(4) {
+  background-image: url("../images/LB.png");
+  background-size: cover;
+}
+
+.baiyei ul li:nth-child(5) {
+  background-image: url("../images/tu2B.png");
+  background-size: cover;
+}
+
+.baiyei ul li:nth-child(6) {
+  background-image: url("../images/F.png");
+  background-size: cover;
+}
+
+.baiyei ul:hover li, .baiyei ul:focus-within li {
+  width: 8%;
+}
+
+.baiyei ul li:focus {
+  outline: none;
+}
+
+.baiyei ul:hover li:hover,
+.baiyei ul li:focus, .baiyei ul:focus-within li:focus {
+  width: 60%;
+}
+
+.baiyei ul:hover li:hover a,
+.baiyei ul li:focus a, .baiyei ul:focus-within li:focus a {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.baiyei ul:hover li:hover a *,
+.baiyei ul li:focus a *, .baiyei ul:focus-within li:focus a * {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.baiyei ul:hover li {
+  width: 8%;
+}
+
+.baiyei ul:hover li a * {
+  opacity: 0;
+}
+
+.baiyei ul:hover li:hover {
+  width: 60% ;
+}
+
+.baiyei ul:hover li:hover a {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.baiyei ul:hover li:hover a * {
+  opacity: 1 !important;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+  /* 還不需用到搜尋 */
+  nav form {
+    visibility: hidden;
+  }
+  .search-icon {
+    visibility: hidden;
+  }
+
+/* 商品展示區 */
+.all {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.all h1 {
+  width: 100%;
+}
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  width: 100%;
+}
+
+figure.sample {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 31%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #000000;
+}
+/* 過渡 */
+figure.sample *,
+figure.sample *:before,
+figure.sample *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.55s ease;
+  transition: all 0.55s ease;
+}
+figure.sample img {
+  width: 100%;
+  /* 背面不可見 */
+  backface-visibility: hidden;
+  vertical-align: top;
+  opacity: 0.9;
+}
+figure.sample .title {
+  position: absolute;
+  top: 58%;
+  left: 7%;
+  padding: 1.4% 2.78% 2.78%;
+}
+figure.sample .title:before,
+figure.sample .title:after {
+  height: 2px;
+  width: 500%;
+  position: absolute;
+  content: '';
+  background-color: #ffffff;
+}
+/* 上線 */
+figure.sample .title:before {
+  top: 0;
+  left: 10.8%;
+  -webkit-transform: translateX(100%);
+  /* 藏到最右 */
+  transform: translateX(100%);
+}
+/* 下線 */
+figure.sample .title:after {
+  bottom: 0;
+  right: 10.8%;
+  /* 藏到最左 */
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+figure.sample .title div:before,
+figure.sample .title div:after {
+  width: 2px;
+  height: 391%;
+  position: absolute;
+  content: '';
+  background-color: #ffffff;
+}
+/* 右線 */
+figure.sample .title div:before {
+  top: 10.8%;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  /* 藏到最下 */
+  transform: translateY(100%);
+}
+/* 左線 */
+figure.sample .title div:after {
+  bottom: 10.8%;
+  left: 0;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+figure.sample h2,
+figure.sample h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+figure.sample h2 {
+  font-weight: 400;
+}
+figure.sample h4 {
+  display: block;
+  font-weight: 700;
+  background-color: #ffffff;
+  padding: 7% 13.8%;
+  color: #000000;
+}
+figure.sample figcaption {
+  position: absolute;
+  bottom: 42%;
+  left: 7%;
+  text-align: left;
+  opacity: 0;
+  padding: 1.38% 16.66% 1.38% 2.78%;
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+figure.sample figcaption p {
+  margin: 0;
+}
+figure.sample a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+figure.sample:hover img,
+figure.sample.hover img {
+  zoom: 1;
+  /* 支援IE */
+  filter: alpha(opacity=35);
+  -webkit-opacity: 0.35;
+  opacity: 0.35;
+}
+figure.sample:hover .title:before,
+figure.sample.hover .title:before,
+figure.sample:hover .title:after,
+figure.sample.hover .title:after,
+figure.sample:hover .title div:before,
+figure.sample.hover .title div:before,
+figure.sample:hover .title div:after,
+figure.sample.hover .title div:after {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+figure.sample:hover .title:before,
+figure.sample.hover .title:before,
+figure.sample:hover .title:after,
+figure.sample.hover .title:after {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+figure.sample:hover figcaption,
+figure.sample.hover figcaption {
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+@media screen and (max-width: 1020px) {
+  figure.sample {
+    width: 45%;
+  }
+} 
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+
+  .baiyei {
+    height: auto;
+  }
+  .baiyei ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    table-layout: unset;
+  }
+  .baiyei ul li, .baiyei ul li:hover, .baiyei ul:hover li, .baiyei ul:hover li:hover{
+    position: relative;
+    width: 95%;
+    height: 200px;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .baiyei ul li div {
+    height: 100%;
+    width: 100%;
+  }
+  figure.sample {
+    width: 95%;
+  }
+  .baiyei ul li div a h2 {
+    top:85px;
+  }
+  .baiyei ul li div a p {
+    top: 86px;
+  }
+}
+@media screen and (max-width: 500px)
+{
+  .baiyei ul li, .baiyei ul li:hover, .baiyei ul:hover li, .baiyei ul:hover li:hover{
+    height: 150px;
+  }
+  .baiyei ul li div a h2 {
+    top:42px;
+  }
+  .baiyei ul li div a p {
+    top: 44px;
+  }
+}

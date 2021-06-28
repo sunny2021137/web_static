@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>DABAIYA-登錄 & 註冊</title>
+
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.2-web/css/all.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 表單驗證用 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <!--additional method - for checkbox .. ,require_from_group method ...-->
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <!--中文錯誤訊息-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
+</head>
+
+<body>
+    <script src="js/login.js"></script>
+    <nav>
+        <div class="menu-icon">
+            <i class="fas fa-hamburger"></i>
+        </div>
+        <div class="logo">DABAIYA</div>
+        <div class="nav-items">
+            <li><a href="index.html">主頁</a></li>
+            <li><a href="intro.html" target="_blank">介紹</a></li>
+            <li><a href="login.html">登錄 & 註冊</a></li>
+        </div>
+        <div class="search-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="cancel-icon">
+            <i class="fas fa-times"></i>
+        </div>
+        <form action="#">
+            <input type="search" class="search-data" placeholder="想要找什麼呢?" required>
+            <button type="submit" class="fas fa-search"></button>
+        </form>
+    </nav>
+    <script src="js/common.js"></script>
+    <section>
+        <!-- 登錄 -->
+        <div class="container">
+            <div class="user signinBx">
+                <div class="imgBx">
+                    <img src="images/pink.jpg" alt="">
+                    <h1>DABAIYA</h1>
+                    <p class="typeText"></p>
+                </div>
+                <div class="formBx">
+                    <form name="in" id="in" method="POST" action="index.html">
+                        <h2>登錄</h2>
+                        <div>
+                            <input type="text" name="userName" placeholder="用戶名">
+                        </div>
+                        <div>
+                            <input type="password" name="userPassword" placeholder="密碼">
+                        </div>
+                        <input type="submit" name="signin" value="登錄">
+                        <p class="signup">沒有帳號？<a href="#" onclick="topggleForm();">註冊</a></p>
+                    </form>
+                </div>
+            </div>
+            <!-- 註冊 -->
+            <div class="user signupBx">
+                <div class="formBx">
+                    <form name="up" id="up" action="index.html" method="POST">
+                        <h2>註冊</h2>
+                        <div>
+                            <input type="text" name="Name" placeholder="用戶名">
+                        </div>
+                        <div>
+                            <input type="email" name="Mail" placeholder="電子郵件">
+                        </div>
+                        <div>
+                            <input type="password" name="Password" id="pd" placeholder="密碼">
+                        </div>
+                        <div>
+                            <input type="password" name="passwordCheck" placeholder="再次輸入密碼">
+                        </div>
+                        <input type="submit" name="signup" value="註冊">
+                        <p class="signup">已有帳號？<a href="#" onclick="topggleForm();">登錄</a></p>
+                    </form>
+                </div>
+                <div class="imgBx">
+                    <img src="images/green.jpg" alt="">
+                    <h1>DABAIYA</h1>
+                    <p class="typeText"></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
